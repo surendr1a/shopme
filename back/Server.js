@@ -13,7 +13,7 @@ const app = express();
 const port = 5000;
 
 app.use(cors({
-  origin: 'https://shop-2o8u.vercel.app',
+  origin: 'https://shopme-front.vercel.app',
   credentials: true,
 }));
 
