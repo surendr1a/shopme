@@ -9,7 +9,7 @@ const MyOrders = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://shop-production-09d5.up.railway.app/api/myorders', { withCredentials: true });
+        const response = await axios.get('https://shopme-back.vercel.app/api/myorders', { withCredentials: true });
         const fetchedOrders = response.data.allOrders || [];
 
         const userEmail = localStorage.getItem('userEmail');

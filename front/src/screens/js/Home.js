@@ -20,7 +20,7 @@ export default function Home() {
 
   useEffect(() => {
     // Fetch data from MongoDB using your backend API
-    axios.get('https://shop-production-09d5.up.railway.app/api/fooddata')
+    axios.get('https://shopme-back.vercel.app/api/fooddata')
       .then(response => {
         // Ensure fetchedProducts is an array
         const fetchedProducts = response.data.fooddata || [];

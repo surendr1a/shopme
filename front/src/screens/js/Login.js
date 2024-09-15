@@ -8,7 +8,7 @@ export default function Login() {
 let navigate = useNavigate();
   const handlesubmit = async (e) => {
       e.preventDefault();
-      const response = await fetch("https://shop-production-09d5.up.railway.app/api/enteruser", {
+      const response = await fetch("https://shopme-back.vercel.app/api/enteruser", {
           method: "POST",
           headers: {
               "Content-Type": "application/json"

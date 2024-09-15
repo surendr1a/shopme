@@ -16,7 +16,7 @@ function Navbar({ setSearchResults }) {
   const handleSearch = async (searchTerm) => {
     try {
       // Send the search term to your backend API
-      const response = await fetch(`https://shop-production-09d5.up.railway.app/api/search?term=${searchTerm}`, {
+      const response = await fetch(`https://shopme-back.vercel.app/api/search?term=${searchTerm}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

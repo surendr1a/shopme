@@ -18,7 +18,7 @@ function Cart() {
       }));
 
       // Send the updated data to the server, including userEmail
-      await axios.post('https://shop-production-09d5.up.railway.app/api/checkout', { cartItems: itemsWithDiscount, userEmail });
+      await axios.post('https://shopme-back.vercel.app/api/checkout', { cartItems: itemsWithDiscount, userEmail });
 
       // Show success message to the user
       alert('Order placed successfully!');
