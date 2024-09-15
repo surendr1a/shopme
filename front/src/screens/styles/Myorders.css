@@ -1,0 +1,88 @@
+Add this CSS to your MyOrders component or include it in your stylesheet
+
+/* Container styles */
+/* .myorder-container{
+  margin-left: 0px;
+} */
+div {
+    font-family: 'Roboto', sans-serif;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  /* Heading styles */
+  h2 {
+    margin-left: 39px;
+    margin-top: 120px;
+    color: #4285f4;
+  }
+  
+  /* Order item styles */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+  }
+  
+  /* Order details styles */
+  p {
+    /* margin-left: 25px; */
+    margin: 5px 0 0 25px;
+  }
+  
+  /* Order ID styles */
+  p:first-child {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  /* Date and time styles */
+  p:nth-child(2),
+  p:nth-child(3) {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Total and other details styles */
+  p:nth-child(n+4) {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* No orders message styles */
+  p:only-child {
+    font-size: 18px;
+    color: #888;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Hover effect on order items */
+  li:hover {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  /* Add these styles to your CSS file or style section */
+
+.checkout-btn {
+  background-color: #4caf50; /* Green background color */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding for the button */
+  font-size: 16px; /* Font size */
+  border: none; /* Remove border */
+  border-radius: 4px; /* Optional: Add rounded corners */
+  cursor: pointer; /* Add cursor pointer on hover */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+/* Change background color on hover */
+.checkout-btn:hover {
+  background-color: #45a049;
+}

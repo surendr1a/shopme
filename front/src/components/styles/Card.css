@@ -1,0 +1,33 @@
+/* styles/Card.css */
+
+.product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 10px;
+  width: 200px; /* Adjust the width as needed */
+  display: inline-block; /* Cards will be in a row */
+  vertical-align: top; /* Align cards at the top */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.02);
+}
+
+.product-details {
+  padding: 10px;
+}
+
+.product-details img {
+  width: 100%;
+  border-radius: 8px 8px 0 0;
+}
+
+.product-details h3 {
+  margin: 10px 0;
+}
+
+.product-details p {
+  color: #555;
+}

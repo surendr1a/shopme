@@ -1,0 +1,22 @@
+/* Search.css */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .search-wrapper {
+    position: relative;
+  }
+  
+  .search-bar {
+    padding-right: 40px; /* Adjust as needed */
+  }
+  
+  .search-btn {
+    position: absolute;
+    top: 50%;
+    right: 10px; /* Adjust as needed */
+    transform: translateY(-50%);
+  }
+  
