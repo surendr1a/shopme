@@ -1,4 +1,3 @@
-// searchRoute.js
 const express = require('express');
 const router = express.Router();
 const connection = require('../Db');
@@ -11,16 +10,15 @@ router.get('/search', async (req, res) => {
   }
 
   try {
-    const db = await connection(); // Connect to MongoDB
+    const db = await connection();
 
     if (!db) {
       console.error('Error connecting to the database');
       return res.status(500).json({ error: 'Internal Server Error' });
     }
 
-    // Assuming your collection is named 'products'
     const result = await db.collection('products').find({
-      title: { $regex: new RegExp(searchTerm, 'i') }, // Case-insensitive search
+      title: { $regex: new RegExp(searchTerm, 'i') },
     }).toArray();
 
     return res.json({ results: result });
