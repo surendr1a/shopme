@@ -5,6 +5,8 @@ import Navbar from '../../components/js/Navbar';
 
 const MyOrders = () => {
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -12,21 +14,32 @@ const MyOrders = () => {
         const response = await axios.get('https://shopme-back.vercel.app/api/myorders', { withCredentials: true });
         const fetchedOrders = response.data.allOrders || [];
 
-        const userEmail = localStorage.getItem('userEmail');
+        const userEmail = localStorage.getItem('userEmail') || ''; // Fallback if userEmail is not set
         const userOrders = fetchedOrders.filter(order => order.userEmail === userEmail);
 
         const sortedOrders = userOrders
           .flatMap(order => order.items.map(item => ({ ...item, createdAt: order.createdAt })))
-          .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // Most recent orders first
+          .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
         setOrders(sortedOrders);
+        setLoading(false);
       } catch (error) {
+        setError('Error fetching orders');
+        setLoading(false);
         console.error('Error fetching orders:', error);
       }
     };
 
     fetchData();
   }, []);
+
+  if (loading) {
+    return <div>Loading orders...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div>
@@ -42,7 +55,7 @@ const MyOrders = () => {
                 <p>Quantity: {item.quantity}</p>
                 <p>Discount: {item.discount}</p>
                 <p>Total: ${item.total}</p>
-                <p>Order Date: {new Date(item.createdAt).toLocaleString()}</p> {/* Correct Date Formatting */}
+                <p>Order Date: {new Date(item.createdAt).toLocaleString()}</p>
               </li>
             ))}
           </ul>
