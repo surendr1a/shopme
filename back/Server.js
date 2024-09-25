@@ -13,7 +13,8 @@ const app = express();
 const port = 5000;
 
 app.use(cors({
-  origin: 'https://shopme-front.vercel.app', // Make sure this origin matches your frontend deployment
+  origin: 'http://localhost:3000', // Make sure this origin matches your frontend deployment
+  methods: ['GET', 'POST'], 
   credentials: true,
 }));
 
@@ -30,6 +31,12 @@ app.use(session({
 }));
 
 connection(); // Ensure your DB connection is correctly set up
+
+// Testing Routes
+
+app.get("/",(req,res)=>{
+  return res.status(200).json({message:"Server running fine"});
+})
 
 // User routes
 app.use('/api', signupUserRoute);

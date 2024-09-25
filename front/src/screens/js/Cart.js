@@ -16,7 +16,7 @@ function Cart() {
         discount: item.discount || 0,
       }));
 
-      await axios.post('https://shopme-back.vercel.app/api/checkout', { cartItems: itemsWithDiscount, userEmail });
+      await axios.post('http://localhost:5000/api/checkout', { cartItems: itemsWithDiscount, userEmail });
 
       alert('Order placed successfully!');
       clearCart();

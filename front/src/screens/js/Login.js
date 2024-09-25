@@ -11,7 +11,7 @@ export default function Login() {
     e.preventDefault();
 
     // Make an API call to login the user
-    const response = await fetch("https://shopme-back.vercel.app/api/enteruser", {
+    const response = await fetch("http://localhost:5000/api/enteruser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

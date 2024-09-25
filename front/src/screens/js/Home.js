@@ -16,7 +16,7 @@ export default function Home() {
   };
 
   useEffect(() => {
-    axios.get('https://shopme-back.vercel.app/api/fooddata')
+    axios.get('http://localhost:5000/api/fooddata')
       .then(response => {
         const fetchedProducts = response.data.fooddata || [];
         console.log('Fetched Products:', fetchedProducts);

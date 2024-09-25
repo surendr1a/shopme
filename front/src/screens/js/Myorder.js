@@ -11,7 +11,7 @@ const MyOrders = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('https://shopme-back.vercel.app/api/myorders', { withCredentials: true });
+        const response = await axios.get('http://localhost:5000/api/myorders', { withCredentials: true });
         const fetchedOrders = response.data.allOrders || [];
 
         const userEmail = localStorage.getItem('userEmail') || ''; // Fallback if userEmail is not set
