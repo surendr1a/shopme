@@ -2,6 +2,8 @@ const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
+const dotenv =require('dotenv')
+dotenv.config();
 const connection = require('./Db'); // Ensure the connection is properly set up
 const signupUserRoute = require('./Routes/Signupuser');
 const loginUserRoute = require('./Routes/Loginuser');
@@ -10,7 +12,7 @@ const ordersRoute = require('./Routes/Orders');
 const searchRoute = require('./Routes/Search');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors({
   origin: 'http://localhost:3000', // Make sure this origin matches your frontend deployment

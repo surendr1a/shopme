@@ -6,6 +6,7 @@ front/node_modules/
 
 # Backend dependencies
 back/node_modules/
+back/.env
 
 # Production build directories
 /build
